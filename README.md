@@ -108,8 +108,6 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
 ## Example Input
 
 ```json
-
-```
     {
         "CID": 1,
         "MolecularFormula_PubChem": "C9H17NO4",
@@ -155,7 +153,7 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
         "IsomericSMILES": "CC(=O)OC(CC(=O)[O-])C[N+](C)(C)C"
     }
 ---
-
+```
 ## Example Output
 
 ```json
@@ -193,4 +191,4 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License. 
