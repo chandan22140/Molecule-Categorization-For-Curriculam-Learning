@@ -50,8 +50,8 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
 ### Setup
 1. Clone the repository and navigate to the project folder:
    ```bash
-   git clone https://github.com/your-username/molecule-categorization.git
-   cd molecule-categorization
+   git clone https://github.com/your-username/Molecule-Categorization-For-Curriculam-Learning.git
+   cd Molecule-Categorization-For-Curriculam-Learning
    ```
 2. Install required libraries:
    ```bash
@@ -72,7 +72,7 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
 
 2. **Run the Script**:
    ```bash
-   python molecule_categorization.py
+   python categorizer.py
    ```
 
 3. **Output**:
@@ -82,7 +82,7 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
 
 ## File Structure
 
-- `molecule_categorization.py`: Main script for processing molecules.
+- `categorizer.py`: Main script for processing molecules.
 - `extended_molecules_properties.json`: Input dataset (required).
 - `categorized_molecules.json`: Output file with categorized molecules.
 
@@ -108,45 +108,69 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
 ## Example Input
 
 ```json
-{
-    "CID": 12345,
-    "MolecularFormula_PubChem": "C7H6O2",
-    "MolecularWeight_PubChem": 122.12,
-    "MolecularWeight_RDKit": 122.12,
-    "ExactMass": 122.03678,
-    "TPSA": 37.3,
-    "LogP": 1.6,
-    "NumHDonors": 1,
-    "NumHAcceptors": 2,
-    "NumRotatableBonds": 0,
-    "RingCount": 1,
-    "AromaticRingCount": 1,
-    "AtomCount": 15,
-    "BondCount": 14,
-    "Charge": 0,
-    "ChiralCenters": 0,
-    "BondTypes": ["single", "double"],
-    "FunctionalGroups": ["phenol", "hydroxy"]
-}
-```
 
+```
+    {
+        "CID": 1,
+        "MolecularFormula_PubChem": "C9H17NO4",
+        "MolecularWeight_PubChem": "203.24",
+        "CanonicalSMILES_PubChem": "CC(=O)OC(CC(=O)[O-])C[N+](C)(C)C",
+        "MolecularWeight_RDKit": 203.23799999999997,
+        "ExactMass": 203.115758024,
+        "TPSA": 66.43,
+        "LogP": -1.2356999999999976,
+        "NumHDonors": 0,
+        "NumHAcceptors": 4,
+        "NumRotatableBonds": 5,
+        "RingCount": 0,
+        "AromaticRingCount": 0,
+        "AtomCount": 14,
+        "BondCount": 13,
+        "Charge": 0,
+        "ChiralCenters": [
+            [
+                4,
+                "?"
+            ]
+        ],
+        "BondTypes": [
+            "SINGLE",
+            "DOUBLE",
+            "SINGLE",
+            "SINGLE",
+            "SINGLE",
+            "SINGLE",
+            "DOUBLE",
+            "SINGLE",
+            "SINGLE",
+            "SINGLE",
+            "SINGLE",
+            "SINGLE",
+            "SINGLE"
+        ],
+        "FunctionalGroups": [
+            "Ester",
+            "Ether"
+        ],
+        "IsomericSMILES": "CC(=O)OC(CC(=O)[O-])C[N+](C)(C)C"
+    }
 ---
 
 ## Example Output
 
 ```json
-{
-    "CID": 12345,
-    "PredictedSMILES": "C1=CC=C(C=C1)O",
-    "Metrics": {
-        "valid": true,
-        "logP": 1.6,
-        "SA": 0,
-        "QED": 0.91,
-        "weight": 122.12
-    },
-    "Difficulty": "Easy"
-}
+    {
+        "CID": 1,
+        "PredictedSMILES": "CC(C(=O)O)NCC1CCO1",
+        "Metrics": {
+            "valid": true,
+            "logP": -0.16200000000000014,
+            "SA": 4,
+            "QED": 0.5980033007198593,
+            "weight": 159.18499999999997
+        },
+        "Difficulty": "Medium"
+    }
 ```
 
 ---
