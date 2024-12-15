@@ -152,8 +152,9 @@ This project aims to predict **Canonical SMILES** for molecules using a **large 
         ],
         "IsomericSMILES": "CC(=O)OC(CC(=O)[O-])C[N+](C)(C)C"
     }
----
 ```
+---
+
 ## Example Output
 
 ```json
